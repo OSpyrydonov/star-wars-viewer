@@ -1,0 +1,28 @@
+.character-container {
+  display: flex;
+}
+
+.character-list {
+  padding: 20px;
+}
+
+.character-graph {
+  width: 1000px;
+  border-left: 3px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #888;
+  font-size: 1.2em;
+}
+
+li:not(:first-child) {
+  margin-top: 5px;
+}
