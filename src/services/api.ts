@@ -6,7 +6,7 @@ import {
   ApiResponse,
   GetAllDataResponse,
   DetailedCharacter,
-} from "../types/types"; // Імпорт типів
+} from "../types/types";
 
 const api = axios.create({
   baseURL: "https://sw-api.starnavi.io",

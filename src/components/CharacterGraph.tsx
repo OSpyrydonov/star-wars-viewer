@@ -29,7 +29,6 @@ const CharacterGraph: React.FC<CharacterGraphProps> = ({ character }) => {
     })),
   ];
 
-  // Створення зв'язків
   const edges: Edge[] = [
     ...character.films.map((_, index) => ({
       id: `e-${character.id}-film-${index}`,
