@@ -8,7 +8,7 @@ import {
   DetailedCharacter,
 } from "../types/types";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: "https://sw-api.starnavi.io",
 });
 
@@ -25,10 +25,6 @@ export const getAllData = async (page: number): Promise<GetAllDataResponse> => {
     const films = filmsResponse.data.results;
     const starships = starshipsResponse.data.results;
 
-    console.log("characters info", characters);
-    console.log("films info", films);
-    console.log("starships info", starships);
-
     const detailedPeople: DetailedCharacter[] = characters.map((character) => {
       return {
         ...character,
@@ -42,8 +38,6 @@ export const getAllData = async (page: number): Promise<GetAllDataResponse> => {
         }),
       };
     });
-
-    console.log("detailedPeople info", detailedPeople);
 
     return {
       characters: detailedPeople,

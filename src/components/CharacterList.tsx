@@ -49,21 +49,28 @@ const CharacterList: React.FC = () => {
     setSelectedCharacter(character);
   };
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
-
   return (
     <div className="character-container">
-      <div className="character-list">
-        <ul>
-          {characters.map((character) => (
-            <li key={character.id}>
-              <button onClick={() => handleCharacterClick(character)}>
-                {character.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+      <div className="character-list" style={{ minHeight: "300px" }}>
+        {error ? (
+          <div>{error}</div>
+        ) : (
+          <ul>
+            {loading
+              ? Array.from({ length: 10 }).map((_, index) => (
+                  <li key={index} style={{ height: "40px" }}>
+                    Loading...
+                  </li>
+                ))
+              : characters.map((character) => (
+                  <li key={character.id} style={{ height: "40px" }}>
+                    <button onClick={() => handleCharacterClick(character)}>
+                      {character.name}
+                    </button>
+                  </li>
+                ))}
+          </ul>
+        )}
         <div>
           <button onClick={handlePreviousPage} disabled={page === 1}>
             Previous
