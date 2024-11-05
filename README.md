@@ -5,7 +5,7 @@ This is a app where you can see the connection between a star wars character and
 In this app i using React, TypeScript, React Flow and Jest tests
 
 ### Demo
-[DEMO LINK](https://ospyrydonov.github.io/todo-app/)
+[DEMO LINK](https://star-wars-viewer.vercel.app/)
 
 ### How to use
 To run this project yoy need:
